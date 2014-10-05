@@ -1,7 +1,7 @@
 /*
     Misc utilities.
 
-    Copyright (C) 2002-2005 Robert Lipe, robertlipe+source@gpsbabel.org
+    Copyright (C) 2002-2014 Robert Lipe, robertlipe+source@gpsbabel.org
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -1857,7 +1857,4 @@ int gb_ptr2int(const void* p)
   union {
     const void* p;
     int i;
-  } x = { p };
-
-  return x.i;
-}
+  
