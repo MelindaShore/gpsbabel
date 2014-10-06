@@ -209,7 +209,7 @@ tmpro_waypt_pr(const Waypoint* wpt)
   if (wpt->HasUrlLink()) {
     // Yes, it's lame to allocate/copy here.
     UrlLink link = wpt->GetUrlLink();
-    l = xstrdup(link.url_.toUtf8().data());
+    l = xstrdup(link.url_8().data());
   }
   gbfprintf(file_out, "new\t%.6s\t%.80s\t%08.6f\t%08.6f\t\t\t%.2f\t%d\t%d\t%.128s\n",
             CSTRc(shortname),
@@ -256,6 +256,4 @@ ff_vecs_t tmpro_vecs = {
   data_write,
   NULL,
   NULL,
-  CET_CHARSET_ASCII, 0	/* CET-REVIEW */
-};
-
+  CET_CHARSET_ASCII, 0	/* CET-REVI
