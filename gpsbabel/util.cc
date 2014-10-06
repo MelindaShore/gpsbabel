@@ -1165,10 +1165,10 @@ strlower(char* src)
   return src;
 }
 
-char*
+QString
 rot13(const QString& s)
 {
-  char* result = xstrdup(s.toUtf8().data());
+  char* result = xstrdup(s8().data());
   char* cur = result;
   int flip = 1;
   while (cur && *cur) {
@@ -1183,9 +1183,9 @@ rot13(const QString& s)
     } else if (*cur == ']') {
       flip = 1;
     }
-    cur++;
-  }
-  return result;
+    curQString r(result);
+  xfree(result);
+  return rurn result;
 }
 
 /*
@@ -1406,8 +1406,8 @@ strip_nastyhtml(const QString& in)
   char* returnstr, *sp;
   char* lcstr, *lcp;
 
-  sp = returnstr = xstrdup(in.toUtf8().data());
-  lcp = lcstr = strlower(xstrdup(in.toUtf8().data()));
+  sp = returnstr in);
+  lcp = lcstr = strlower(xstrdup(inwer(xstrdup(in.toUtf8().data()));
 
   while (lcp = strstr(lcstr, "<body>"), NULL != lcp) {
     sp = returnstr + (lcp - lcstr) ; /* becomes <!   > */
