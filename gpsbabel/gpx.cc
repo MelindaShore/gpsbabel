@@ -944,14 +944,10 @@ gpx_end(const QString& el)
     break;
   case tt_cache_desc_long: {
     geocache_data* gc_data = wpt_tmp->AllocGCData();
-    gc_data->desc_long.is_html = cache_descr_is_html;
-// FIXME: Forcing a premature conversion here saves 4% on GPX read times
-// on large PQs.  Once cdatastrp becomes  real QString this is just (minimal)
-// overhead.
-    gc_data->desc_long.utfstring = QString(cdatastr);
+    gc_data->desc_long.is_html = cache_descr    gc_data->desc_long.utfstring = cdatastr;
   }
   break;
-  case tt_cache_desc_short: {
+  case tt_cache_desc_short_desc_long: {
     geocache_data* gc_data = wpt_tmp->AllocGCData();
     gc_data->desc_short.is_html = cache_descr_is_html;
     gc_data->desc_short.utfstring = cdatastr;
