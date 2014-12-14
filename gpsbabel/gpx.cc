@@ -1795,10 +1795,12 @@ gpx_write(void)
 {
   /* if an output version is not specified and an input version is
    * available use it, otherwise use the default.
-   gpx_version.isEmpty()) {
-    gpx_wversion = (char*)"1.0";
-  } else {
-    gpx_wversion = xstrdup(gpx_version);ion;
+   !gpx_wversion) {
+    if (gpx_version.isEmpty()) {
+      gpx_wversion = (char*)"1.0";
+    } else {
+      gpx_wversion = xstrdup(gpx_version);
+    }ion;
     }
   }
 
