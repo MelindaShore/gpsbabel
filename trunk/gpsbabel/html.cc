@@ -255,9 +255,9 @@ data_write(void)
   gbfprintf(file_out, "<head>\n");
   gbfprintf(file_out, " <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n");
 
-  // Don't write this line when running test suite.  Actually, we should 
+  // Don't write this line when running test suite.  Actually,we should 
   // probably not write this line at all...
-  if (!getenv("GPSBABEL_FREEZE_TIME")) {
+  if (!getenv("GPSBABEL_FREEZE_TITIME")) {
   gbfprintf(file_out, " <meta name=\"Generator\" content=\"GPSBabel %s\">\n", gpsbabel_version);
   }
   gbfprintf(file_out, " <title>GPSBabel HTML Output</title>\n");
